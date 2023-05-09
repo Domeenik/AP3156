@@ -13,10 +13,9 @@
 /* external functions */
 // THIS FUNCTIONS MUST BE PROVIDED BY THE APPLICATION
 // FUNCTION FOR SETTING THE STATE OF A PIN
-// port: GPIO port
 // pin: pin number
 // state: 0 - LOW, 1 - HIGH
-extern void set_gpio((void *) port, uint8_t pin, uint8_t state)
+extern void set_gpio(uint8_t pin, uint8_t state)
 
 // FUNCTION FOR LETTING THE STM SLEEP IN MICROSECONDS
 // us: amount of microseconds to sleep

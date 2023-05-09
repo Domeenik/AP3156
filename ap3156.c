@@ -11,15 +11,15 @@
 void send_cmd(uint8_t first, uint8_t sec){
 	// FIRST SEQUENCE
 	for (uint8_t i = 0; i < first; i++) {
-		set_gpio(AP_PORT, AP_PIN, 0);
-		set_gpio(AP_PORT, AP_PIN, 1);
+		set_gpio(AP_PIN, 0);
+		set_gpio(AP_PIN, 1);
 	}
 	delay_us(T_SEP);
 
 	// SECOND SEQUENCE
 	for (uint8_t i = 0; i < sec; i++) {
-		set_gpio(AP_PORT, AP_PIN, 0);
-		set_gpio(AP_PORT, AP_PIN, 1);
+		set_gpio(AP_PIN, 0);
+		set_gpio(AP_PIN, 1);
 	}
 	delay_us(T_SEP);
 }
@@ -27,8 +27,8 @@ void send_cmd(uint8_t first, uint8_t sec){
 // SOFT RESET THE AP3156
 void soft_reset(){
 	for (uint8_t i = 0; i < 33; i++) {
-		set_gpio(AP_PORT, AP_PIN, 0);
-		set_gpio(AP_PORT, AP_PIN, 1);
+		set_gpio(AP_PIN, 0);
+		set_gpio(AP_PIN, 1);
 	}
 	delay_us(T_SEP);
 }
@@ -36,9 +36,9 @@ void soft_reset(){
 // INITIALIZE THE AP3156
 void ap3156_init() {
 	// set AP3156 HIGH for active mode
-	set_gpio(AP_PORT, AP_PIN, 0);
+	set_gpio(AP_PIN, 0);
 	delay_us(1000);
-	set_gpio(AP_PORT, AP_PIN, 1);
+	set_gpio(AP_PIN, 1);
 
 	// RESET
 	soft_reset();

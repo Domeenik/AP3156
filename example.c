@@ -15,11 +15,11 @@ void delay_us (uint16_t us){
 	while (__HAL_TIM_GET_COUNTER(&htim1) < (us));
 }
 
-void set_gpio((void *) port, uint8_t pin, uint8_t val) {
+void set_gpio(uint8_t pin, uint8_t val) {
 	if (val){
-		port->BSRR = 1 << pin;
+		GPIOB->BSRR = 1 << pin;
 	} else {
-		port->BSRR = 1 << (pin+16);
+		GPIOB->BSRR = 1 << (pin+16);
 	}
 }
 
